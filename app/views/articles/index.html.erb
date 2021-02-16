@@ -1,19 +1,17 @@
+<div class="banner">
+<%= link_to "Wikinimous", articles_path %> <br>
+   <%= link_to "New Article", new_article_path %>
+</div>
 <div class="container">
-  <h1>My Tasks</h1>
-
-  <div class="task-wraper">
-    <%@tasks.each do |task|%>
-      <div class="task">
-        <%= form_for(task) do |f| %>
-          <%= f.check_box :completed  %>
-        <%end %>
-        <p><%= link_to task.title, task_path(task.id) %></p>
-        <p><%= link_to " X ", task_path(task.id), method: :delete %></p>
+  <h1>My Articles</h1>
+  <div class="article-wraper">
+    <% @articles.each do |article|%>
+      <div class="article">
+        <h1><%= link_to article.title, article_path(article.id) %></h1>
+        <p><%= article.content %></p>
       </div> 
     <%end %>
     
   </div>
-
-  <%= link_to "+ Add a new task", new_tasks_path %>
 </div>
 

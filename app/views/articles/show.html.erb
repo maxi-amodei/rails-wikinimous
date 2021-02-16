@@ -1,19 +1,19 @@
 <div class="container">
-  <h1><%= @task.title %></h1>
-
-  <div class="task-wraper"> 
-    <p><%= @task.details %></p>
+<div class="banner">
+  <%= link_to "Wikinimous", articles_path %> <br>
+  
+</div>
+ 
+  <h1><%= @article.title %></h1>
+  <%= link_to edit_article_path do %>
+    <i class="fas fa-pencil-alt"></i>
+  <% end %>
+  <%= link_to article_path(@article), method: :delete, data: { confirm: 'Are you sure?' } do %>
+    <i class="fa fa-trash"></i> 
+  <% end %>
+  <div class="article-wraper"> 
+    <p><%= @article.content %></p>
   </div>
-  <div class="completion">
-  <%= form_for(@task) do |f| %>
-          <%= f.check_box :completed  %>
-        <%end %>
-  </div>
-  <% if @task.completed %>
-    <p>This task is completed</p>
-  <% else %>
-   <p>This task is not completed yet</p>
-  <% end %> 
-  <%= link_to "Back to list", tasks_path %> <br>
-   <%= link_to "Edit", edit_tasks_path %>
+ 
+ 
 </div>

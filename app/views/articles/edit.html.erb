@@ -1,15 +1,19 @@
 <div class="container">
-  <h1>Edit Task</h1>
-   <%= form_for(@task) do |f| %>
-  <%= f.label :title %>
-  <%= f.text_field :title %>
-  <br>
-  <%= f.label :details %>
-  <%= f.text_field :details %>
-  <br>
-  <%= f.label :completed %>
-  <%= f.check_box :completed  %>
-  <%= f.submit class: 'btn'%>
+  <h1>Edit Article</h1>
   
+   <%# <%= form_for(@article) do |f| %>
+  <%# <%= f.label :title %> 
+  <%# <%= f.text_field :title %> 
+  <br>
+  <%# <%= f.label :content %>
+  <%# <%= f.text_field :content %> 
+  <br>
+  <%# <%= f.submit%> 
+  
+<%# <% end %>
+<%= simple_form_for(@article) do |f| %>
+  <%= f.input :title %>
+  <%= f.input :content %>
+  <%= f.submit %>
 <% end %>
 </div>
