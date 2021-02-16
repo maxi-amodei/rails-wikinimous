@@ -6,11 +6,19 @@
     <%= csp_meta_tag %>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
     <link rel=“stylesheet” href=“https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css”>
+    
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <%= yield %>
+    <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+      <%= link_to "Wikinimous", articles_path %> <br>
+      <%= link_to "New Article", new_article_path %>
+    </nav>
+    <div class="container">
+      <%= yield %>
+    </div>
+    
   </body>
 </html>

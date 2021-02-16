@@ -1,17 +1,8 @@
-<div class="banner">
-<%= link_to "Wikinimous", articles_path %> <br>
-   <%= link_to "New Article", new_article_path %>
-</div>
 
-<div class="container">
   <h1>New Article</h1>
-  <%= form_for(@article) do |f| %>
-  <%= f.label :title %>
-  <%= f.text_field :title %>
-  <br>
-  <%= f.label :content %>
-  <%= f.text_field :content %>
+
+<%= simple_form_for(@article) do |f| %>
+  <%= f.input :title %>
+  <%= f.input :content %>
   <%= f.submit %>
-  
 <% end %>
-</div>

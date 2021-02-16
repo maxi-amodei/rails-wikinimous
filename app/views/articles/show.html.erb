@@ -1,19 +1,16 @@
-<div class="container">
-<div class="banner">
-  <%= link_to "Wikinimous", articles_path %> <br>
+
+ <div class="d-flex justify-content-left align-items-center p-3 border-bottom mb-4">
+    <h1 class="mr-2"><%= @article.title %></h1>
   
-</div>
- 
-  <h1><%= @article.title %></h1>
-  <%= link_to edit_article_path do %>
-    <i class="fas fa-pencil-alt"></i>
-  <% end %>
-  <%= link_to article_path(@article), method: :delete, data: { confirm: 'Are you sure?' } do %>
-    <i class="fa fa-trash"></i> 
-  <% end %>
+    <%= link_to edit_article_path do %>
+      <i class="fas fa-pencil-alt mr-1"></i>
+    <% end %>
+    <%= link_to article_path(@article), method: :delete, data: { confirm: 'Are you sure?' } do %>
+      <i class="fa fa-trash"></i> 
+    <% end %>
+ </div>
+  
   <div class="article-wraper"> 
     <p><%= @article.content %></p>
   </div>
  
- 
-</div>
