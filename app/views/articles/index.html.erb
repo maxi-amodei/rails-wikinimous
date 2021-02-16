@@ -1,0 +1,19 @@
+<div class="container">
+  <h1>My Tasks</h1>
+
+  <div class="task-wraper">
+    <%@tasks.each do |task|%>
+      <div class="task">
+        <%= form_for(task) do |f| %>
+          <%= f.check_box :completed  %>
+        <%end %>
+        <p><%= link_to task.title, task_path(task.id) %></p>
+        <p><%= link_to " X ", task_path(task.id), method: :delete %></p>
+      </div> 
+    <%end %>
+    
+  </div>
+
+  <%= link_to "+ Add a new task", new_tasks_path %>
+</div>
+
